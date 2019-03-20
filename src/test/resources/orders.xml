@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<orders date="15.03.2009">
+    <order orderId="9379993" state="declined">
+        <name>hslghslghdls</name>
+    </order>
+    <order orderId="9379993" state="accepted">
+        <name>hslghslghdls</name>
+        <date>xomeDate</date>
+        <items>
+            <item>
+                <name>0934525</name>
+            </item>
+            <item>
+                <quantity>0934525</quantity>
+            </item>
+            <item>
+                <price>0934525</price>
+            </item>
+        </items>
+    </order>
+</orders>
