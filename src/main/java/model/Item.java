@@ -1,20 +1,12 @@
 package model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 
-@Entity
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Item {
-
-    @Id
-    @Column(length = 50, nullable = false)
-    private String id;
 
     @XmlAttribute
     private String itemId;
