@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<orders date="2019-03-25 21:06">
+    <order id="74202475" state="new">
+        <priceUAH>720.00</priceUAH>
+    </order>
+    <order id="74202475" state="new">
+        <price>720.00</price>
+    </order>
+</orders>

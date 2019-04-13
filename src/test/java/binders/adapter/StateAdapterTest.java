@@ -1,6 +1,6 @@
-package adapter;
+package binders.adapter;
 
-import model.State;
+import models.enums.State;
 import org.junit.Assert;
 import org.junit.Test;
 

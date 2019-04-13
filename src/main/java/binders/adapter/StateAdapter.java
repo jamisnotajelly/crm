@@ -1,6 +1,6 @@
-package adapter;
+package binders.adapter;
 
-import model.State;
+import models.enums.State;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 public class StateAdapter extends XmlAdapter<String, State> {

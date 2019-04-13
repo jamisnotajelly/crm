@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<orders date="2019-03-25 21:06">
+    <order id="73966846" state="declined">
+        <name>Смолий Смолий Юлия</name>
+        <phone>+380634104979</phone>
+        <email>julikk.smeh@gmail.com</email>
+        <date>22.03.19 11:47</date>
+        <address>Полтава, Богдана Хмельницкого 21</address>
+        <paymentType>Наложенный платеж</paymentType>
+        <deliveryType>Транспортная компания "Новая почта"</deliveryType>
+        <payercomment>Мини чих мальчик кремовый) сумку ярко- розовую и комбезик зелёный розмерчик хс самый маленький</payercomment>
+        <priceUAH>805.00</priceUAH>
+        <discountedPriceUAH>805.00</discountedPriceUAH>
+        <source>Мобильное приложение каталога</source>
+        <cancellationReason>Нет в наличии</cancellationReason>
+        <cancellationReasonComment>Добрый день! К сожалению к 12802 нет в наличии, будем с сайте убирать, предлагаем посетить наш главный сайт https://shinshilka.ua. Тут более актуальный ассортимент и цены товаров. Спасибо!</cancellationReasonComment>
+        <items>
+            <item id="679307836">
+                <name>Сумка-переноска Candy Rose для кошек и собак ( 40,5см * 22см * 28см)</name>
+                <quantity>1.00</quantity>
+                <currency>UAH</currency>
+                <image>https://images.ua.prom.st/1111528652_w640_h640_sumka-perenoska-candy-rose.jpg</image>
+                <url>https://shinshilka.kiev.ua/p679307836-sumka-perenoska-candy.html</url>
+                <price>525.00</price>
+                <sku>12802</sku>
+            </item>
+            <item id="586483929">
+                <name>Толстовка Pet Fashion "Тиффани" 23-26см (XXS) для собак</name>
+                <quantity>1.00</quantity>
+                <currency>UAH</currency>
+                <image>https://images.ua.prom.st/913093540_w640_h640_tolstovka-pet-fashion.jpg</image>
+                <url>https://shinshilka.kiev.ua/p586483929-tolstovka-pet-fashion.html</url>
+                <price>280.00</price>
+                <sku>19636</sku>
+            </item>
+        </items>
+    </order>
+</orders>

@@ -1,4 +1,4 @@
-package model;
+package models.enums;
 
 public enum State {
     NEW,

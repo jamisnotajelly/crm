@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<orders date="2019-03-25 21:06">
+    <order id="74202475" state="new">
+        <name>Кистрина Наталья</name>
+        <phone>+380997228900</phone>
+        <email>kistrina.natali@gmail.com</email>
+        <date>25.03.19 20:39</date>
+        <address>Одесса, Отделение 65</address>
+        <paymentType>Наличными</paymentType>
+        <deliveryType>Транспортная компания "Новая почта"</deliveryType>
+        <priceUAH>720.00</priceUAH>
+        <discountedPriceUAH>720.00</discountedPriceUAH>
+        <source>Портал</source>
+        <items>
+            <item id="756859879">
+                <name>Пеленка многоразовая для собак 40*60см</name>
+                <quantity>4.00</quantity>
+                <currency>UAH</currency>
+                <image>https://images.ua.prom.st/1279252469_w640_h640_pelenka-mnogorazovaya-dlya.jpg</image>
+                <url>https://shinshilka.kiev.ua/p756859879-pelenka-mnogorazovaya-dlya.html</url>
+                <price>180.00</price>
+                <sku>26001</sku>
+            </item>
+        </items>
+    </order>
+</orders>

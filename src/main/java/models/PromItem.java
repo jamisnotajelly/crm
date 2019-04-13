@@ -1,4 +1,4 @@
-package model;
+package models;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -6,9 +6,10 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Item {
+//TODO add abstract class?
+public class PromItem {
 
-    @XmlAttribute
+    @XmlAttribute(name = "id")
     private String itemId;
 
     @XmlElement
@@ -29,7 +30,15 @@ public class Item {
     @XmlElement
     private String price;
 
-    public Item() {
+    @XmlElement
+    private String sku;
+
+    private PromOrder promOrder;
+
+    @XmlElement(name = "external_id")
+    private String externalId;
+
+    public PromItem() {
     }
 
     public String getItemId() {
@@ -87,4 +96,29 @@ public class Item {
     public void setPrice(String price) {
         this.price = price;
     }
+
+    public PromOrder getPromOrder() {
+        return promOrder;
+    }
+
+    public void setPromOrder(PromOrder promOrder) {
+        this.promOrder = promOrder;
+    }
+
+    public String getSku() {
+        return sku;
+    }
+
+    public void setSku(String sku) {
+        this.sku = sku;
+    }
+
+    public String getExternalId() {
+        return externalId;
+    }
+
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
+    }
+
 }

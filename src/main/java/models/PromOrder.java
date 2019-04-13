@@ -1,6 +1,7 @@
-package model;
+package models;
 
-import adapter.StateAdapter;
+import binders.adapter.StateAdapter;
+import models.enums.State;
 
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -9,8 +10,10 @@ import java.util.List;
 
 @XmlRootElement(name = "order")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Order {
-    @XmlAttribute
+//TODO add abstract class?
+public class PromOrder {
+
+    @XmlAttribute(name = "id")
     private String orderId;
 
     @XmlAttribute
@@ -44,23 +47,40 @@ public class Order {
     @XmlElement
     private String deliveryType;
 
-    @XmlElement(name="deliverycost")
+    @XmlElement(name = "deliverycost")
     private String deliveryCost;
 
-    @XmlElement(name="payercomment")
+    @XmlElement(name = "payercomment")
     private String payerComment;
 
-    @XmlElement(name="salescomment")
+    @XmlElement(name = "salescomment")
     private String salesComment;
 
-    @XmlElement
+    @XmlElements({
+            @XmlElement(name = "price"),
+            @XmlElement(name = "priceUAH")
+    })
     private String price;
 
-    @XmlElementWrapper(name="items")
-    @XmlElement(name="item")
-    private List<Item> items = new ArrayList<>();
+    @XmlElement
+    private String discountedPriceUAH;
 
-    public Order() {
+    @XmlElement
+    private String source;
+
+    @XmlElementWrapper(name = "items")
+    @XmlElement(name = "item")
+    private List<PromItem> promItems = new ArrayList<>();
+
+    private String exportDate;
+
+    @XmlElement
+    private String cancellationReason;
+
+    @XmlElement
+    private String cancellationReasonComment;
+
+    public PromOrder() {
     }
 
     public String getOrderId() {
@@ -183,11 +203,52 @@ public class Order {
         this.price = price;
     }
 
-    public List<Item> getItems() {
-        return items;
+    public List<PromItem> getPromItems() {
+        return promItems;
     }
 
-    public void setItems(List<Item> items) {
-        this.items = items;
+    public void setPromItems(List<PromItem> promItems) {
+        this.promItems = promItems;
     }
+
+    public String getExportDate() {
+        return exportDate;
+    }
+
+    public void setExportDate(String exportDate) {
+        this.exportDate = exportDate;
+    }
+
+    public String getDiscountedPriceUAH() {
+        return discountedPriceUAH;
+    }
+
+    public void setDiscountedPriceUAH(String discountedPriceUAH) {
+        this.discountedPriceUAH = discountedPriceUAH;
+    }
+
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    public String getCancellationReason() {
+        return cancellationReason;
+    }
+
+    public void setCancellationReason(String cancellationReason) {
+        this.cancellationReason = cancellationReason;
+    }
+
+    public String getCancellationReasonComment() {
+        return cancellationReasonComment;
+    }
+
+    public void setCancellationReasonComment(String cancellationReasonComment) {
+        this.cancellationReasonComment = cancellationReasonComment;
+    }
+
 }
