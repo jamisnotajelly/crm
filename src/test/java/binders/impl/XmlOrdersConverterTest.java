@@ -28,7 +28,7 @@ public class XmlOrdersConverterTest {
         promOrder.setOrderId("74202475");
         promOrder.setState(State.NEW);
         promOrder.setDate("25.03.19 20:39");
-        promOrder.setName("Кистрина  Наталья");
+        promOrder.setName("Кистрина Наталья");
         promOrder.setPhone("+380997228900");
         promOrder.setEmail("kistrina.natali@gmail.com");
         promOrder.setAddress("Одесса, Отделение 65");
