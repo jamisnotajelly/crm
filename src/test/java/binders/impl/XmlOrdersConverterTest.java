@@ -1,4 +1,5 @@
 package binders.impl;
+
 import models.PromItem;
 import models.PromOrder;
 import models.PromOrders;
@@ -54,8 +55,6 @@ public class XmlOrdersConverterTest {
         PromOrders actualOrders = xmlOrdersConverter.parse(getClass().getClassLoader().getResource("orders/oneOrder.xml"));
 
         assertThat(expectedOrders).isEqualToComparingFieldByFieldRecursively(actualOrders);
-
-
     }
 
 

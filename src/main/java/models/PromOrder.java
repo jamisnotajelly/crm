@@ -3,6 +3,7 @@ package models;
 import binders.adapter.StateAdapter;
 import models.enums.State;
 
+import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.util.ArrayList;
@@ -11,76 +12,112 @@ import java.util.List;
 @XmlRootElement(name = "order")
 @XmlAccessorType(XmlAccessType.FIELD)
 //TODO add abstract class?
+@Entity
+@Table(name = "prom_order")
 public class PromOrder {
 
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    @Column(name = "order_id")
     @XmlAttribute(name = "id")
     private String orderId;
 
+    @Column
+    @Enumerated(EnumType.STRING)
     @XmlAttribute
     @XmlJavaTypeAdapter(StateAdapter.class)
     private State state;
 
+    @Column
     @XmlElement
     private String date;
 
+    @Column
     @XmlElement
     private String name;
 
+    @Column
     @XmlElement
     private String company;
 
+    @Column
     @XmlElement
     private String phone;
 
+    @Column
     @XmlElement
     private String email;
 
+    @Column
     @XmlElement
     private String address;
 
+    @Column
     @XmlElement
     private String index;
 
+    @Column(name = "payment_type")
     @XmlElement
     private String paymentType;
 
+    @Column(name = "delivery_type")
     @XmlElement
     private String deliveryType;
 
+    @Column(name = "delivery_cost")
     @XmlElement(name = "deliverycost")
     private String deliveryCost;
 
+    @Column(name = "payer_comment")
     @XmlElement(name = "payercomment")
     private String payerComment;
 
+    @Column(name = "sales_comment")
     @XmlElement(name = "salescomment")
     private String salesComment;
 
+    @Column
     @XmlElements({
             @XmlElement(name = "price"),
             @XmlElement(name = "priceUAH")
     })
     private String price;
 
+    @Column(name = "discounted_price_uah")
     @XmlElement
     private String discountedPriceUAH;
 
+    @Column
     @XmlElement
     private String source;
 
+    @OneToMany(mappedBy = "promOrder", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     @XmlElementWrapper(name = "items")
     @XmlElement(name = "item")
     private List<PromItem> promItems = new ArrayList<>();
 
+    @Column(name = "export_date")
     private String exportDate;
 
+    @Column(name = "cancellation_reason")
     @XmlElement
     private String cancellationReason;
 
+    @Column(name = "cancellation_reason_comment")
     @XmlElement
     private String cancellationReasonComment;
 
     public PromOrder() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getOrderId() {

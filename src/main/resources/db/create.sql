@@ -1,0 +1,6 @@
+create table prom_item (id varchar(255) not null, currency varchar(255), external_id varchar(255), image varchar(255), item_id varchar(255), name varchar(255), price varchar(255), quantity varchar(255), sku varchar(255), url varchar(255), prom_order_id varchar(255), primary key (id));
+create table prom_order (id varchar(255) not null, address varchar(255), cancellation_reason varchar(255), cancellation_reason_comment varchar(255), company varchar(255), date varchar(255), delivery_cost varchar(255), delivery_type varchar(255), discounted_price_uah varchar(255), email varchar(255), export_date varchar(255), index varchar(255), name varchar(255), order_id varchar(255), payer_comment varchar(255), payment_type varchar(255), phone varchar(255), price varchar(255), sales_comment varchar(255), source varchar(255), state varchar(255), primary key (id))
+alter table if exists prom_item add constraint FK1n1k1jfjsmp3o7d3ry69b31ru foreign key (prom_order_id) references prom_order
+
+
+CREATE SEQUENCE hibernate_sequence START WITH 1 INCREMENT BY 1 NO MINVALUE NO MAXVALUE CACHE 1
