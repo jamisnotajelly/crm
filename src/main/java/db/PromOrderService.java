@@ -2,9 +2,11 @@ package db;
 
 import models.PromOrder;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import java.util.List;
 
+@Stateless
 public class PromOrderService {
 
     public void persist(PromOrder promOrder) {
@@ -35,7 +37,6 @@ public class PromOrderService {
     public List<PromOrder> findAll() {
         EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
         List<PromOrder> promOrders = entityManager.createQuery("Select o from " + PromOrder.class.getSimpleName() + " o LEFT JOIN FETCH o.promItems").getResultList();
-
         entityManager.close();
         return promOrders;
     }

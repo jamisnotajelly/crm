@@ -22,13 +22,5 @@ sudo apt update
 
 sudo apt -y install postgresql-11
 
-sudo -u postgres createuser username
-sudo -u postgres createdb database
-
-sudo -u postgres psql<< END_OF_SCRIPT
-alter user username with encrypted password 'password';
-grant all privileges on database database to username;
-END_OF_SCRIPT
-
 
 

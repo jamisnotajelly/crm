@@ -1,3 +1,4 @@
+-- TODO add set schema 'my_schema' to all of the sql scripts
 CREATE TABLE prom_item (
   ID varchar(255) NOT NULL,
   CURRENCY varchar(255),
