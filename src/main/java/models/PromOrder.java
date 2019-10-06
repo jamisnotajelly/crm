@@ -288,4 +288,31 @@ public class PromOrder {
         this.cancellationReasonComment = cancellationReasonComment;
     }
 
+    @Override
+    public String toString() {
+        return "PromOrder{" +
+                "id=" + id +
+                ", orderId='" + orderId + '\'' +
+                ", state=" + state +
+                ", date='" + date + '\'' +
+                ", name='" + name + '\'' +
+                ", company='" + company + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", address='" + address + '\'' +
+                ", index='" + index + '\'' +
+                ", paymentType='" + paymentType + '\'' +
+                ", deliveryType='" + deliveryType + '\'' +
+                ", deliveryCost='" + deliveryCost + '\'' +
+                ", payerComment='" + payerComment + '\'' +
+                ", salesComment='" + salesComment + '\'' +
+                ", price='" + price + '\'' +
+                ", discountedPriceUAH='" + discountedPriceUAH + '\'' +
+                ", source='" + source + '\'' +
+                ", promItems=" + promItems +
+                ", exportDate='" + exportDate + '\'' +
+                ", cancellationReason='" + cancellationReason + '\'' +
+                ", cancellationReasonComment='" + cancellationReasonComment + '\'' +
+                '}';
+    }
 }
