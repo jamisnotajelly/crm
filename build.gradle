@@ -1,3 +1,7 @@
+plugins {
+    id 'org.hidetake.ssh' version '2.10.1'
+}
+
 group 'com.jamisnotajelly'
 version '1.0-SNAPSHOT'
 
@@ -11,6 +15,8 @@ repositories {
     mavenCentral()
 }
 
+
+
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
 
@@ -19,6 +25,8 @@ dependencies {
     compile group: 'org.hibernate', name: 'hibernate-core', version: '5.4.2.Final'
 
     compile group: 'postgresql', name: 'postgresql', version: '9.1-901-1.jdbc4'
+
+    compile 'com.google.api-client:google-api-client:1.30.2'
 
     compile group: 'org.slf4j', name:'slf4j-api', version: '1.7.2'
 
@@ -35,3 +43,48 @@ dependencies {
     compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.5'
 
 }
+
+
+
+task deploy {
+    if (project.hasProperty("host") && project.hasProperty("identity")) {
+        remotes {
+            web01 {
+                host = project.getProperties().get("host")
+                user = project.getProperties().get("user", "ubuntu")
+                identity = file(project.getProperties().get("identity"))
+            }
+        }
+        project.logger.lifecycle("Host " + remotes.web01.host)
+        project.logger.lifecycle("User " + remotes.web01.user)
+        project.logger.lifecycle("Identity file " + remotes.web01.identity)
+
+        def artifactsDir = projectDir.path + '/build/libs'
+        project.logger.lifecycle(artifactsDir)
+        def artifacts = []
+        fileTree(dir: artifactsDir, include: '**/*.war').visit {
+            FileVisitDetails details ->
+                artifacts << details.file.getPath()
+        }
+        project.logger.lifecycle("The next artifacts were found " + artifacts)
+
+        doLast {
+            if (!artifacts.isEmpty()) {
+                ssh.run {
+                    settings {
+                        pty = true
+                    }
+                session(remotes.web01) {
+                    project.logger.lifecycle("Starting to upload artifacts ")
+                    put from: files(artifacts), into: '/opt/tomee/apache-tomee-microprofile-8.0.0-M3/webapps/file.war'
+                }
+                }
+            }
+        }
+    } else {
+        project.logger.lifecycle"Host and identity parameters were not specified"
+        project.logger.lifecycle"Skipping project deployment"
+    }
+}
+
+build.finalizedBy(deploy)

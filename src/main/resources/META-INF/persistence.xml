@@ -6,9 +6,9 @@
         <properties>
             <!-- Configuring The Database Connection Details -->
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:3306/jpaDemoDb" />
-            <property name="javax.persistence.jdbc.user" value="root" />
-            <property name="javax.persistence.jdbc.password" value="" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/database" />
+            <property name="javax.persistence.jdbc.user" value="username" />
+            <property name="javax.persistence.jdbc.password" value="password" />
         </properties>
     </persistence-unit>
 </persistence>
